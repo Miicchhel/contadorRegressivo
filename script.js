@@ -29,8 +29,8 @@ window.onload = () => {
     let inputMinutos = document.getElementById('inputMinutos').value;
     let inputSegundos = document.getElementById('inputSegundos').value;
 
-    if (!inputMinutos) inputMinutos = 0;
-    if (!inputSegundos) inputSegundos = 0;
+    if (!inputMinutos || inputMinutos < 0) inputMinutos = 0;
+    if (!inputSegundos || inputSegundos < 0) inputSegundos = 0;
 
     const tempo = parseInt(inputSegundos) + parseInt(inputMinutos)*60;
     var duracao = tempo; //conversão para segundos
